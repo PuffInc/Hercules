@@ -13,9 +13,9 @@ from tqdm import tqdm
 
 def main():
     """ Main data profiling part"""
-    df = import_csv_dataset("Cables-V1.1-utf8.csv")
-    #df = import_excel_dataset("Cables-V1.1.xlsx")
-    
+    df = import_csv_dataset("commune_2022.csv",',')
+    #df = import_excel_dataset("test.xlsx")
+
     profile_dataset(df,'Hercules_report.html')
 
 
@@ -29,7 +29,7 @@ def import_csv_dataset(csv:str,separateur=";", encodage='utf-8'):
     return df
 
 
-def import_excel_dataset(file_path:str, header_row=1 ,skip_first_rows=0):
+def import_excel_dataset(file_path:str, header_row=1, skip_first_rows=0):
     """ Import data for profiling"""
     df = pd.read_excel(file_path,
                        header=header_row,
@@ -40,7 +40,7 @@ def import_excel_dataset(file_path:str, header_row=1 ,skip_first_rows=0):
 def regex_match_finder(column:pd.DataFrame(),regex_pattern:str):
     """ Returns a values matching a regex,
     note : used to check if AT LEAST ONE values match (e.g. has leading whitespace)
-    and not to check that ALL the values match"""    
+    and not to check that ALL the values match"""
 
     match_example = '[No match]'
     Regex = re.compile(regex_pattern)
@@ -52,27 +52,27 @@ def regex_match_finder(column:pd.DataFrame(),regex_pattern:str):
             result = Regex.match(str(value))
             if result is not None :
                 match_example = value
-            
+    
     return match_example
 
 
 def regex_checker(column:pd.DataFrame(),regex_pattern:str):
-    """ checks if ALL the values of the column matches the regex_pattern, 
-    returns a boolean match/no match 
-    and if no match an example not matching the regex_pattern """    
+    """ checks if ALL the values of the column matches the regex_pattern,
+    returns a boolean match/no match
+    and if no match an example not matching the regex_pattern """
     match = True
     no_match_example = '[No no-match]'
     Regex = re.compile(regex_pattern)
-       
+
     if len(column) == 0:
         no_match_example = '[Empty col]'
     else:   
         for value in column:
             result = Regex.match(str(value))
-            if result is None :
+            if result is None:
                 match = False
                 no_match_example = value
-            
+
     return match,no_match_example
 
 
@@ -85,7 +85,7 @@ def whitespace_profiling(df:pd.DataFrame()):
 
         has_leading_spaces_regex = regex_match_finder(values,'^\s+')
         has_trailing_spaces_regex = regex_match_finder(values,'^\s+$')
-        
+
         regex_analysis = {'name': column,
                           'has_leading_spaces_regex_example':has_leading_spaces_regex,
                           'has_trailing_spaces_regex_example':"not_working_yet"}
@@ -94,15 +94,15 @@ def whitespace_profiling(df:pd.DataFrame()):
     result = pd.DataFrame(whitespace_regexes)
 
     return result
-    
 
-def regex_profiling(df:pd.DataFrame()):
+
+def regex_profiling(df: pd.DataFrame()):
     regexes = []
     for column in df:
         # drop np.nan et 'nan' post-typage à 'string'
         values = df[column].dropna()
         values = values[values != 'nan']
-            
+
         int_regex = regex_checker(values,'^[0-9]*$')
         decimal_regex = regex_checker(values,'^[-,.0-9]*$') #old deimal check rule '\d*(\.\d+)?$'
         one_word_no_accent_regex = regex_checker(values,'^[a-zA-Z]*$')
@@ -126,9 +126,9 @@ def business_key_profiling(df:pd.DataFrame(),max_key_len:int):
     #TODO : ajouter une exclusion des colonnes nullables des clefs pontentielles "a subkey is nullable"
     all_columns = df.columns.values.tolist()
     nullable_columns = df.columns[df.isna().any()].tolist() #https://stackoverflow.com/questions/36226083/how-to-find-which-columns-contain-any-nan-value-in-pandas-dataframe
-    print("hey")
+    print("work to be done here :: exclusion of nullable columns")
     print(str(nullable_columns))
-    raise Exception
+
     keys = []
     alternate_keys = []
     potential_keys = []

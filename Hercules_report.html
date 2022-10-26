@@ -1,0 +1,2168 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script><BR><BR>df.shape() :<BR>df.shape : 12 columns<BR>df.shape : 37600 lignes (hors entete)<BR><BR>Check that there is no duplicated col name :<BR> The dataset has 12 columns, of which 12are distinct<BR><BR>df.head(10)<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>TYPECOM</th>
+      <th>COM</th>
+      <th>REG</th>
+      <th>DEP</th>
+      <th>CTCD</th>
+      <th>ARR</th>
+      <th>TNCC</th>
+      <th>NCC</th>
+      <th>NCCENR</th>
+      <th>LIBELLE</th>
+      <th>CAN</th>
+      <th>COMPARENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>COM</td>
+      <td>01001</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>012</td>
+      <td>5</td>
+      <td>ABERGEMENT CLEMENCIAT</td>
+      <td>Abergement-Clémenciat</td>
+      <td>L'Abergement-Clémenciat</td>
+      <td>0108</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01002</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>5</td>
+      <td>ABERGEMENT DE VAREY</td>
+      <td>Abergement-de-Varey</td>
+      <td>L'Abergement-de-Varey</td>
+      <td>0101</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01004</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>1</td>
+      <td>AMBERIEU EN BUGEY</td>
+      <td>Ambérieu-en-Bugey</td>
+      <td>Ambérieu-en-Bugey</td>
+      <td>0101</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01005</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>012</td>
+      <td>1</td>
+      <td>AMBERIEUX EN DOMBES</td>
+      <td>Ambérieux-en-Dombes</td>
+      <td>Ambérieux-en-Dombes</td>
+      <td>0122</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01006</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>1</td>
+      <td>AMBLEON</td>
+      <td>Ambléon</td>
+      <td>Ambléon</td>
+      <td>0104</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01007</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>1</td>
+      <td>AMBRONAY</td>
+      <td>Ambronay</td>
+      <td>Ambronay</td>
+      <td>0101</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01008</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>1</td>
+      <td>AMBUTRIX</td>
+      <td>Ambutrix</td>
+      <td>Ambutrix</td>
+      <td>0101</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01009</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>1</td>
+      <td>ANDERT ET CONDON</td>
+      <td>Andert-et-Condon</td>
+      <td>Andert-et-Condon</td>
+      <td>0104</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01010</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>011</td>
+      <td>1</td>
+      <td>ANGLEFORT</td>
+      <td>Anglefort</td>
+      <td>Anglefort</td>
+      <td>0110</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>01011</td>
+      <td>84.0</td>
+      <td>01</td>
+      <td>01D</td>
+      <td>014</td>
+      <td>1</td>
+      <td>APREMONT</td>
+      <td>Apremont</td>
+      <td>Apremont</td>
+      <td>0114</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table><BR>Missing value analysis<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>len</th>
+      <th>nulls</th>
+      <th>null_%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TYPECOM</td>
+      <td>37600</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>37600</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>REG</td>
+      <td>37600</td>
+      <td>2600</td>
+      <td>6.91</td>
+    </tr>
+    <tr>
+      <td>DEP</td>
+      <td>37600</td>
+      <td>2600</td>
+      <td>6.91</td>
+    </tr>
+    <tr>
+      <td>CTCD</td>
+      <td>37600</td>
+      <td>2600</td>
+      <td>6.91</td>
+    </tr>
+    <tr>
+      <td>ARR</td>
+      <td>37600</td>
+      <td>2617</td>
+      <td>6.96</td>
+    </tr>
+    <tr>
+      <td>TNCC</td>
+      <td>37600</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>NCC</td>
+      <td>37600</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>NCCENR</td>
+      <td>37600</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>LIBELLE</td>
+      <td>37600</td>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <td>CAN</td>
+      <td>37600</td>
+      <td>2745</td>
+      <td>7.30</td>
+    </tr>
+    <tr>
+      <td>COMPARENT</td>
+      <td>37600</td>
+      <td>34955</td>
+      <td>92.97</td>
+    </tr>
+  </tbody>
+</table><BR>df.describe() numeric cols<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Attribut</th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>REG</td>
+      <td>35000.0</td>
+      <td>52.278971</td>
+      <td>24.359832</td>
+      <td>1.0</td>
+      <td>28.0</td>
+      <td>44.0</td>
+      <td>76.0</td>
+      <td>94.0</td>
+    </tr>
+    <tr>
+      <td>TNCC</td>
+      <td>37600.0</td>
+      <td>0.305824</td>
+      <td>0.783149</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>8.0</td>
+    </tr>
+    <tr>
+      <td>COMPARENT</td>
+      <td>2645.0</td>
+      <td>46593.700189</td>
+      <td>23604.325884</td>
+      <td>1015.0</td>
+      <td>25505.0</td>
+      <td>49331.0</td>
+      <td>62473.0</td>
+      <td>91390.0</td>
+    </tr>
+  </tbody>
+</table><BR>df.describe() non numeric cols<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Attribut</th>
+      <th>count</th>
+      <th>unique</th>
+      <th>top</th>
+      <th>freq</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TYPECOM</td>
+      <td>37600</td>
+      <td>4</td>
+      <td>COM</td>
+      <td>34955</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>37600</td>
+      <td>37026</td>
+      <td>35184</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>DEP</td>
+      <td>35000</td>
+      <td>101</td>
+      <td>62</td>
+      <td>890</td>
+    </tr>
+    <tr>
+      <td>CTCD</td>
+      <td>35000</td>
+      <td>100</td>
+      <td>62D</td>
+      <td>890</td>
+    </tr>
+    <tr>
+      <td>ARR</td>
+      <td>34983</td>
+      <td>332</td>
+      <td>621</td>
+      <td>357</td>
+    </tr>
+    <tr>
+      <td>NCC</td>
+      <td>37600</td>
+      <td>34712</td>
+      <td>SAINT SAUVEUR</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>NCCENR</td>
+      <td>37600</td>
+      <td>34790</td>
+      <td>Saint-Sauveur</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>LIBELLE</td>
+      <td>37600</td>
+      <td>34967</td>
+      <td>Saint-Sauveur</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>CAN</td>
+      <td>34855</td>
+      <td>2039</td>
+      <td>5723</td>
+      <td>135</td>
+    </tr>
+  </tbody>
+</table><BR>Values profiling<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>type</th>
+      <th>samples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TYPECOM</td>
+      <td>ordinal</td>
+      <td>[COM, COMD, COMA, ARM]</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>continuous</td>
+      <td>[01001, 01002, 01004, 01005, 01006, 01007, 01008, 01009, 01010, 01011]</td>
+    </tr>
+    <tr>
+      <td>REG</td>
+      <td>continuous</td>
+      <td>[84.0, nan, 32.0, 93.0, 44.0, 76.0, 28.0, 75.0, 24.0, 27.0]</td>
+    </tr>
+    <tr>
+      <td>DEP</td>
+      <td>continuous</td>
+      <td>[01, nan, 02, 03, 04, 05, 06, 07, 08, 09]</td>
+    </tr>
+    <tr>
+      <td>CTCD</td>
+      <td>continuous</td>
+      <td>[01D, nan, 02D, 03D, 04D, 05D, 06D, 07D, 08D, 09D]</td>
+    </tr>
+    <tr>
+      <td>ARR</td>
+      <td>continuous</td>
+      <td>[012, 011, 014, nan, 013, 022, 024, 025, 023, 021]</td>
+    </tr>
+    <tr>
+      <td>TNCC</td>
+      <td>ordinal</td>
+      <td>[5, 1, 0, 3, 2, 4, 6, 8]</td>
+    </tr>
+    <tr>
+      <td>NCC</td>
+      <td>continuous</td>
+      <td>[ABERGEMENT CLEMENCIAT, ABERGEMENT DE VAREY, AMBERIEU EN BUGEY, AMBERIEUX EN DOMBES, AMBLEON, AMBRONAY, AMBUTRIX, ANDERT ET CONDON, ANGLEFORT, APREMONT]</td>
+    </tr>
+    <tr>
+      <td>NCCENR</td>
+      <td>continuous</td>
+      <td>[Abergement-Clémenciat, Abergement-de-Varey, Ambérieu-en-Bugey, Ambérieux-en-Dombes, Ambléon, Ambronay, Ambutrix, Andert-et-Condon, Anglefort, Apremont]</td>
+    </tr>
+    <tr>
+      <td>LIBELLE</td>
+      <td>continuous</td>
+      <td>[L'Abergement-Clémenciat, L'Abergement-de-Varey, Ambérieu-en-Bugey, Ambérieux-en-Dombes, Ambléon, Ambronay, Ambutrix, Andert-et-Condon, Anglefort, Apremont]</td>
+    </tr>
+    <tr>
+      <td>CAN</td>
+      <td>continuous</td>
+      <td>[0108, 0101, 0122, 0104, 0110, 0114, 0115, nan, 0117, 0102]</td>
+    </tr>
+    <tr>
+      <td>COMPARENT</td>
+      <td>continuous</td>
+      <td>[nan, 1015.0, 1025.0, 1033.0, 1036.0, 1453.0, 1080.0, 1095.0, 1262.0, 1185.0]</td>
+    </tr>
+  </tbody>
+</table><BR>Whitespace analysis<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>has_leading_spaces_regex_example</th>
+      <th>has_trailing_spaces_regex_example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TYPECOM</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>REG</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>DEP</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>CTCD</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>ARR</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>TNCC</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>NCC</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>NCCENR</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>LIBELLE</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>CAN</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+    <tr>
+      <td>COMPARENT</td>
+      <td>[No match]</td>
+      <td>not_working_yet</td>
+    </tr>
+  </tbody>
+</table><BR>Regex matcher (for not null cols) - after trimming whitespaces and excluding null values withon columns.<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>int_no_space_regex</th>
+      <th>i_regex_no_match</th>
+      <th>decimal_regex</th>
+      <th>d_regex_no_match</th>
+      <th>one_word_no_accent_regex</th>
+      <th>l_regex_no_match</th>
+      <th>one_word_alphanum_regex</th>
+      <th>text_regex</th>
+      <th>t_regex_no_match</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>TYPECOM</td>
+      <td>False</td>
+      <td>COM</td>
+      <td>False</td>
+      <td>COM</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>COM</td>
+      <td>False</td>
+      <td>2B366</td>
+      <td>False</td>
+      <td>2B366</td>
+      <td>False</td>
+      <td>97617</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>REG</td>
+      <td>False</td>
+      <td>6.0</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+      <td>False</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>DEP</td>
+      <td>False</td>
+      <td>2B</td>
+      <td>False</td>
+      <td>2B</td>
+      <td>False</td>
+      <td>976</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>CTCD</td>
+      <td>False</td>
+      <td>976D</td>
+      <td>False</td>
+      <td>976D</td>
+      <td>False</td>
+      <td>976D</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>ARR</td>
+      <td>False</td>
+      <td>2B3</td>
+      <td>False</td>
+      <td>2B3</td>
+      <td>False</td>
+      <td>9742</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>TNCC</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+      <td>False</td>
+      <td>0</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>NCC</td>
+      <td>False</td>
+      <td>TSINGONI</td>
+      <td>False</td>
+      <td>TSINGONI</td>
+      <td>False</td>
+      <td>M TSANGAMOUJI</td>
+      <td>M TSANGAMOUJI</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>NCCENR</td>
+      <td>False</td>
+      <td>Tsingoni</td>
+      <td>False</td>
+      <td>Tsingoni</td>
+      <td>False</td>
+      <td>M'Tsangamouji</td>
+      <td>M'Tsangamouji</td>
+      <td>False</td>
+      <td>M'Tsangamouji</td>
+    </tr>
+    <tr>
+      <td>LIBELLE</td>
+      <td>False</td>
+      <td>Tsingoni</td>
+      <td>False</td>
+      <td>Tsingoni</td>
+      <td>False</td>
+      <td>M'Tsangamouji</td>
+      <td>M'Tsangamouji</td>
+      <td>False</td>
+      <td>M'Tsangamouji</td>
+    </tr>
+    <tr>
+      <td>CAN</td>
+      <td>False</td>
+      <td>2B12</td>
+      <td>False</td>
+      <td>2B12</td>
+      <td>False</td>
+      <td>97613</td>
+      <td>[No no-match]</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+    <tr>
+      <td>COMPARENT</td>
+      <td>False</td>
+      <td>91390.0</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+      <td>False</td>
+      <td>91390.0</td>
+      <td>91390.0</td>
+      <td>True</td>
+      <td>[No no-match]</td>
+    </tr>
+  </tbody>
+</table><BR>Recherche des clefs métier<BR><table border="1" class="dataframe table table-dark table-responsive-sm table-sm table-hover" id="my_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>key</th>
+      <th>is_key</th>
+      <th>Raison de non clef : doublon/subkey</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>['TYPECOM']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM']</td>
+    </tr>
+    <tr>
+      <td>['COM']</td>
+      <td>False</td>
+      <td>ligne 14 : ['01015']</td>
+    </tr>
+    <tr>
+      <td>['REG']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0']</td>
+    </tr>
+    <tr>
+      <td>['DEP']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01']</td>
+    </tr>
+    <tr>
+      <td>['CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D']</td>
+    </tr>
+    <tr>
+      <td>['ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['012']</td>
+    </tr>
+    <tr>
+      <td>['TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['5']</td>
+    </tr>
+    <tr>
+      <td>['NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['Apremont']</td>
+    </tr>
+    <tr>
+      <td>['LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['Apremont']</td>
+    </tr>
+    <tr>
+      <td>['CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['0108']</td>
+    </tr>
+    <tr>
+      <td>['COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01D']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '012']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '5']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '0108']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['COM', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 14 : ['01015', '1']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', 'SAINT BONNET EN CHAMPSAUR']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CAN']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['COM', 'COMPARENT']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01D']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '012']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '5']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '0108']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '01D']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '012']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '5']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '0108']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '012']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '5']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '0108']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 3 : ['011', '1']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['012', '0108']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['012', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 3 : ['1', '0101']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['5', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['CORCELLES', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['Apremont', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['0108', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'REG']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'REG')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'DEP']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'DEP')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'CTCD']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'ARR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'TNCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('TYPECOM', 'COM')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'NCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('TYPECOM', 'COM')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'NCCENR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('TYPECOM', 'COM')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'LIBELLE']</td>
+      <td>True</td>
+      <td>A subset is a key : ('TYPECOM', 'COM')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'COM', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'DEP']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0', '01']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0', '01D']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0', '012']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0', '5']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', '84.0', 'APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', '84.0', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', '84.0', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0', '0108']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'REG', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '84.0', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01', '01D']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01', '012']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01', '5']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'BLAISE']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'Blaise']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'Blaise']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01', '0108']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'DEP', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01D', '012']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01D', '5']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'BLAISE']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'Blaise']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'Blaise']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01D', '0108']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CTCD', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '01D', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 3 : ['COM', '011', '1']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'BLAISE']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'Blaise']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'nan', 'Blaise']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '012', '0108']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'ARR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '012', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', '1', 'APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', '1', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', '1', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'TNCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 3 : ['COM', '1', '0101']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'TNCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '5', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'BLAISE', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'APREMONT', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'Apremont', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'Blaise', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 2541 : ['COMD', 'Blaise', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['COM', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TYPECOM', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['COM', '0108', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'DEP']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'DEP')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'CTCD']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'ARR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'TNCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'REG')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'NCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'REG')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'NCCENR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'REG')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'LIBELLE']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'REG')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'REG', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'CTCD']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'ARR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'TNCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'DEP')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'NCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'DEP')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'NCCENR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'DEP')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'LIBELLE']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'DEP')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'DEP', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'ARR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'TNCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'NCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'NCCENR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'LIBELLE']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CTCD')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CTCD', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR', 'TNCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR', 'NCC']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR', 'NCCENR']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR', 'LIBELLE']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'ARR')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'ARR', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', '0', 'SAINT BONNET EN CHAMPSAUR']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', '0', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', '0', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'TNCC', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'TNCC', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', 'SAINT BONNET EN CHAMPSAUR', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', 'SAINT BONNET EN CHAMPSAUR', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCC', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCC', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 1917 : ['05132', 'Saint-Bonnet-en-Champsaur', 'Saint-Bonnet-en-Champsaur']</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCCENR', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'NCCENR', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'LIBELLE', 'CAN']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'CAN')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'LIBELLE', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['COM', 'CAN', 'COMPARENT']</td>
+      <td>True</td>
+      <td>A subset is a key : ('COM', 'COMPARENT')</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'CTCD']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01', '01D']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01', '012']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01', '5']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01', '0108']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'DEP', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01D', '012']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01D', '5']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01D', '0108']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CTCD', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '01D', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 3 : ['84.0', '011', '1']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '012', '0108']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'ARR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '012', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', '1', 'APREMONT']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', '1', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', '1', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'TNCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 3 : ['84.0', '1', '0101']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'TNCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '5', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'APREMONT', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'Apremont', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['84.0', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['REG', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['84.0', '0108', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'ARR']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '01D', '012']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '01D', '5']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '01D', '0108']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CTCD', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '01D', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 3 : ['01', '011', '1']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '012', '0108']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'ARR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '012', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'TNCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 3 : ['01', '1', '0101']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'TNCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '5', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 6485 : ['17', 'VERGNE', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 9343 : ['25', 'Longeville', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['DEP', 'LIBELLE', 'COMPARENT']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['DEP', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01', '0108', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR', 'TNCC']</td>
+      <td>False</td>
+      <td>ligne 3 : ['01D', '011', '1']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'nan', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '012', '0108']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'ARR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '012', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'TNCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 3 : ['01D', '1', '0101']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'TNCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '5', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 6485 : ['17D', 'VERGNE', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 9343 : ['25D', 'Longeville', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 28183 : ['6AE', 'Bouxwiller', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['CTCD', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['01D', '0108', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'TNCC', 'NCC']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'CORCELLES']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'TNCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'TNCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', '0', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'TNCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 3 : ['011', '1', '0101']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'TNCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 3 : ['011', '1', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'CORCELLES', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 6485 : ['175', 'VERGNE', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'Corcelles']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'NCCENR', 'COMPARENT']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['ARR', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['nan', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['ARR', 'LIBELLE', 'COMPARENT']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>['ARR', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 1 : ['012', '0108', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCC', 'NCCENR']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCC', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'APREMONT', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCC', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['0', 'CORCELLES', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCC', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'APREMONT', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'Apremont', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['0', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['0', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['1', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['TNCC', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 3 : ['1', '0101', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'NCCENR', 'LIBELLE']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT', 'Apremont', 'Apremont']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'NCCENR', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['CORCELLES', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'NCCENR', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['CORCELLES', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['APREMONT', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCC', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 6485 : ['VERGNE', '1718', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR', 'LIBELLE', 'CAN']</td>
+      <td>False</td>
+      <td>ligne 118 : ['Corcelles', 'Corcelles', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR', 'LIBELLE', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 10 : ['Apremont', 'Apremont', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['NCCENR', 'CAN', 'COMPARENT']</td>
+      <td>False</td>
+      <td>ligne 9343 : ['Longeville', '2515', 'nan']</td>
+    </tr>
+    <tr>
+      <td>['LIBELLE', 'CAN', 'COMPARENT']</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
