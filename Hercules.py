@@ -127,7 +127,7 @@ def regex_profiling(df: pd.DataFrame()):
                           'int_no_space_regex':int_regex[0],'i_regex_no_match':int_regex[1],
                           'decimal_regex':decimal_regex[0],'d_regex_no_match':decimal_regex[1],
                           'one_word_no_accent_regex':one_word_no_accent_regex[0],'l_regex_no_match':one_word_no_accent_regex[1],
-                          'one_word_alphanum_regex':one_word_alphanum_regex[0],'one_word_alphanum_regex':one_word_alphanum_regex[1],
+                          'one_word_alphanum_regex':one_word_alphanum_regex[0],'w_regex_no_match':one_word_alphanum_regex[1],
                           'text_regex':text_regex[0],'t_regex_no_match':text_regex[1]                      
                           }
         regexes.append(regex_analysis)
@@ -206,7 +206,7 @@ def null_profiling(df:pd.DataFrame()):
         nulls.append(column_null_analysis)
     result = pd.DataFrame(nulls)
 
-    return result
+    return result 
 
 
 def values_profiling(df:pd.DataFrame()):
@@ -253,16 +253,16 @@ def result_output(result:pd.DataFrame(),title:str):
     return html
 
 
-def init_html_results():
-    """ creates a string concatenating the boostrap references"""
-    css = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">'
-    js1 = '<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>'
-    js2 = '<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>'
-    js3 = '<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>'
+# def init_html_results():
+#     """ creates a string concatenating the boostrap references"""
+#     css = '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">'
+#     js1 = '<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>'
+#     js2 = '<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>'
+#     js3 = '<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>'
     
-    inited_html = css + js1 + js2 + js3 + '<BR>'
+#     inited_html = css + js1 + js2 + js3 + '<BR>'
     
-    return inited_html
+#     return inited_html
 
 
 def correlation_analysis(df: pd.DataFrame()):
@@ -352,13 +352,55 @@ def pie_charting_ordinal_and_binary_values(df:pd.DataFrame,values_analysis_resul
 
     return html_result
 
+#28/10/22 brute force conditionnal color ; TODO abstarct method
+
+def binary_colorization(cell_value):
+    if cell_value == 'binary': highlight = 'background-color: #CFF800;'
+    else: highlight = ''
+    return highlight
+def ordinal_colorization(cell_value):
+    if cell_value == 'ordinal': highlight = 'background-color: #00B0BA;'
+    else: highlight = ''
+    return highlight
+def continuous_colorization(cell_value):
+    if cell_value == 'continuous': highlight = 'background-color: #FFEC59;'
+    else: highlight = ''
+    return highlight
+def true_colorization(cell_value):
+    if ((cell_value == 'True') or (cell_value == True)): highlight = 'background-color: #4DD091;'
+    else: highlight = ''
+    return highlight
+def false_colorization(cell_value):
+    if ((cell_value == 'False') or (cell_value == False)): highlight = 'background-color: #FF6F68;'
+    else: highlight = ''
+    return highlight
+
 
 def profile_dataset(df: pd.DataFrame(), output_html_file: str):
     """ Dataprofiling pipeline """
+    
+    # Set CSS properties for th elements in dataframe
+    th_props = [('font-size', '14px'),
+                ('text-align', 'center'),
+                ('font-weight', 'bold'),
+                ('color', 'white'),
+                ('background-color', '#383E42'),
+                ('font-family', 'Arial')]
 
-    html_results = init_html_results()
+    # Set CSS properties for td elements in dataframe
+    td_props = [('font-size', '12px'),
+                ('font-family', 'Arial'),
+                ('border-bottom','2px solid lavender')]
 
-    # !!!!!! ci dessus a ajouter dans la parstie HTMLisée !!!!!!!! 
+    # Set table styles
+    styles = [dict(selector="th", props=th_props),
+    dict(selector="td", props=td_props)]
+
+    # 28/10/2022 : test de décommisionner bootsrap et d'utiliser directement df.style
+    # html_results = init_html_results()
+    html_results = ''
+
+    # !!!!!! ci dessus a ajouter dans la parstie HTMLisée !!!!!!!!
     print(f"\ndf.shape() : {(df.shape)[1]} colonnes ; {(df.shape)[0]} lignes (hors entete)")
     html_result = "<BR>Data shape (df.Shape()) :"
     html_result = html_result + "<BR>df.shape : " + str((df.shape)[1]) + " columns"
@@ -375,26 +417,33 @@ def profile_dataset(df: pd.DataFrame(), output_html_file: str):
     html_result = html_result + "<BR> The dataset has " + str(columns_amount) + " columns, of which " + str(distinct_col_amount) + " are distinct<BR>"
     html_results = html_results + html_result
 
-    #df.head(10)
+    # df.head(10)
     result = df.head(10)
-    html_result = result_output(result,'df.head(10)')
+    result = result.astype('str')
+    styled_result = result.style.set_table_styles(styles)
+    html_result = result_output(styled_result,'df.head(10)')
     html_results = html_results + html_result
 
-    #Missing value analysis
+    # Missing value analysis
     result = null_profiling(df)
-    html_result = result_output(result,'Missing value analysis')
+    styled_result = result.style.background_gradient(subset=["nulls"]).bar(subset=["null_%"]).format(precision=2, subset=["null_%"]).set_table_styles(styles)
+    html_result = result_output(styled_result,'Missing value analysis')
     html_results = html_results + html_result
-    html_result_graph = plotly_build_barplot(result,'null_%','name','nulls','Null analysis','h')
-    html_results = html_results + html_result_graph
+    # barchart hereunder less useful is barcahrt already appearing as a style in the above table
+    # html_result_graph = plotly_build_barplot(result,'null_%','name','nulls','Null analysis','h')
+    # html_results = html_results + html_result_graph
 
-    #df.describe() numeric cols
+    # df.describe() numeric cols
     result = df.describe(include='number').T
     # le nom de la colonne passe en index, on la remet comme col en 1ere position
     result['Attribut'] = result.index
     first_column = result.pop('Attribut')
     result.insert(0, 'Attribut', first_column)
+    result = result.reset_index()
+    #graphic design
+    styled_result = result.style.background_gradient(subset=['count']).format(precision=0).set_table_styles(styles)
     # export
-    html_result = result_output(result,'df.describe() numeric cols')
+    html_result = result_output(styled_result,'df.describe() numeric cols')
     html_results = html_results + html_result
 
     #df.describe() non numeric cols
@@ -403,20 +452,34 @@ def profile_dataset(df: pd.DataFrame(), output_html_file: str):
     result['Attribut'] = result.index
     first_column = result.pop('Attribut')
     result.insert(0, 'Attribut', first_column)
+    result = result.reset_index()
+    #graphic design
+    styled_result = result.style.background_gradient(subset=['count']).background_gradient(subset=['unique']).background_gradient(subset=['freq']).set_table_styles(styles)
     # export
-    html_result = result_output(result,'df.describe() non numeric cols')
+    html_result = result_output(styled_result,'df.describe() non numeric cols')
     html_results = html_results + html_result
 
     # Values profiling
     result = values_profiling(df)
-    html_result = result_output(result,'Values profiling')
+    styled_result = result.style.applymap(binary_colorization).applymap(ordinal_colorization).applymap(continuous_colorization).set_table_styles(styles)
+    html_result = result_output(styled_result,'Values profiling')
     html_results = html_results + html_result
     html_result_graph = pie_charting_ordinal_and_binary_values(df,result)
     html_results = html_results + html_result_graph
+    # TODO : replace plein de pie chart par un barchart :
+    # |
+    # |    nuke               EDF
+    # |    thermique          EDF
+    # |____thermique__________EDF____________
+    #       Type              proprio
+    # print(result)
+    # html_result_graph2 = plotly_build_barplot(result)
+    # html_results = html_results + html_result_graph2
 
     # Whitespace analysis"
     result = whitespace_profiling(df)
-    html_result = result_output(result,'Whitespace analysis')
+    styled_result = result.style.set_table_styles(styles)
+    html_result = result_output(styled_result,'Whitespace analysis')
     html_results = html_results + html_result
 
     #Regex matcher (for not null cols) - after trimming whitespaces and excluding null values within columns ")
@@ -425,7 +488,8 @@ def profile_dataset(df: pd.DataFrame(), output_html_file: str):
     trimed_df = df.copy() # else df and trimed_df points toward the same in_memory references hence modifying df instead of only trimed_df
     trimed_df = trim(trimed_df)
     result = regex_profiling(trimed_df)
-    html_result = result_output(result,'Regex matcher (for not null cols) - after trimming whitespaces and excluding null values withon columns.')
+    styled_result = result.style.applymap(true_colorization).applymap(false_colorization).set_table_styles(styles)
+    html_result = result_output(styled_result,'Regex matcher (for not null cols) - after trimming whitespaces and excluding null values withon columns.')
     html_results = html_results + html_result
 
     #Recherche des clefs métier
@@ -436,10 +500,12 @@ def profile_dataset(df: pd.DataFrame(), output_html_file: str):
     if len(keys_df) == 0:
         html_result = 'no PK found '
     else:
-        html_result = result_output(keys_df,title)
+        styled_result = keys_df.style.applymap(true_colorization).applymap(false_colorization).set_table_styles(styles)
+        html_result = result_output(styled_result,title)
     html_results = html_results + html_result
     title = 'Recherche des clefs métier [paramétré pour chercher les combinaisons d\'une longueur max de ' + str(max_key_length) +' colonnes]'
-    html_result = result_output(result,title)
+    styled_result = result.style.applymap(true_colorization).applymap(false_colorization).set_table_styles(styles)
+    html_result = result_output(styled_result,title)
     html_results = html_results + html_result
 
     # Correlation analysis using phi(k)
